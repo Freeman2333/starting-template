@@ -31,16 +31,17 @@ $roboto: Roboto, sans-serif // Roboto Font Family
 @mixin tr
 	transition: all .3s ease
 
-@mixin grid($cols, $mgn:3%)
+@mixin grid($cols, $mgn:20px)
 	display: flex
 	flex-wrap: wrap
 	&>*
-	  width: ((100% - (($cols - 1) * $mgn)) / $cols )
-	  flex-basis: ((100% - (($cols - 1) * $mgn)) / $cols )
-	  margin-right: $mgn
-	  margin-bottom: $mgn
-	  &:nth-child(#{$cols}n)
-	    margin-right: 0
+		width: (100% / $cols ) - 3%
+		flex-grow: 1
+		flex-basis: (100% / $cols ) - 3%
+		margin-right: $mgn
+		margin-bottom: $mgn
+		&:nth-child(#{$cols}n)
+		  margin-right: 0
 
 
 @include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
