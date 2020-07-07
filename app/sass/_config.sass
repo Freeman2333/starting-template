@@ -43,6 +43,11 @@ $roboto: Roboto, sans-serif // Roboto Font Family
 		&:nth-child(#{$cols}n)
 		  margin-right: 0
 
+@mixin mq($size)
+  @media only screen and (max-width: $size)
+    @content
+
+
 
 @include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
 @include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2')
